@@ -95,4 +95,16 @@ public class StereoTest {
         stereo.volumeDown();
         assertEquals(0, stereo.getVolume());
     }
+
+    @Test
+    public void connectedDevicesStartsEmpty() {
+        assertEquals(0, stereo.countConnectedDevices());
+    }
+
+    @Test
+    public void canConnectDevice() {
+        SmartTV tv = new SmartTV();
+        tv.connect(stereo);
+        assertEquals(1, stereo.countConnectedDevices());
+    }
 }

@@ -1,9 +1,12 @@
+import java.util.ArrayList;
+
 public class Stereo  {
     private String name;
     private Radio radio;
     private RecordDeck recordDeck;
     private CdDeck cdDeck;
     private int volume;
+    private ArrayList<IConnect> connectedDevices;
 
     public Stereo(String name, Radio radio, RecordDeck recordDeck, CdDeck cdDeck){
         this.name = name;
@@ -11,6 +14,7 @@ public class Stereo  {
         this.recordDeck  = recordDeck;
         this.cdDeck = cdDeck;
         this.volume  = 5;
+        this.connectedDevices = new ArrayList<IConnect>();
     }
 
     public String getName() {
@@ -59,5 +63,13 @@ public class Stereo  {
         if (this.volume > 0) {
             this.volume -= 1;
         }
+    }
+
+    public void connectDevice(IConnect device) {
+        this.connectedDevices.add(device);
+    }
+
+    public int countConnectedDevices(){
+        return this.connectedDevices.size();
     }
 }
