@@ -16,26 +16,30 @@ public class Stereo  {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public Radio radio() {
-        return radio;
+        return this.radio;
     }
 
     public RecordDeck recordDeck() {
-        return recordDeck;
+        return this.recordDeck;
     }
 
     public CdDeck cdDeck() {
-        return cdDeck;
+        return this.cdDeck;
     }
 
     public int getVolume() {
-        return volume;
+        return this.volume;
     }
 
     public boolean isPowerOn() {
-        return powerOn;
+        return this.powerOn;
+    }
+
+    public String tuneRadio(String station) {
+        return this.radio.tune(station);
     }
 }

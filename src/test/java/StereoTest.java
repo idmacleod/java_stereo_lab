@@ -48,5 +48,8 @@ public class StereoTest {
         assertEquals(5, stereo.getVolume());
     }
 
-    @
+    @Test
+    public void canTuneRadio(){
+        assertEquals("Radio tuned to Radio 1", stereo.tuneRadio("Radio 1"));
+    }
 }
