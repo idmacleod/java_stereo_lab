@@ -4,7 +4,6 @@ public class Stereo  {
     private RecordDeck recordDeck;
     private CdDeck cdDeck;
     private int volume;
-    private boolean powerOn;
 
     public Stereo(String name, Radio radio, RecordDeck recordDeck, CdDeck cdDeck){
         this.name = name;
@@ -12,7 +11,6 @@ public class Stereo  {
         this.recordDeck  = recordDeck;
         this.cdDeck = cdDeck;
         this.volume  = 5;
-        this.powerOn = false;
     }
 
     public String getName() {
@@ -35,11 +33,31 @@ public class Stereo  {
         return this.volume;
     }
 
-    public boolean isPowerOn() {
-        return this.powerOn;
+    public String tuneRadio(String station) {
+        this.recordDeck.stop();
+        this.cdDeck.stop();
+        return this.radio.tune(station);
     }
 
-    public String tuneRadio(String station) {
-        return this.radio.tune(station);
+    public void playCd(){
+        this.recordDeck.stop();
+        this.cdDeck.play();
+    }
+
+    public void playRecord(){
+        this.cdDeck.stop();
+        this.recordDeck.play();
+    }
+
+    public void volumeUp(){
+        if (this.volume < 10) {
+            this.volume += 1;
+        }
+    }
+
+    public void volumeDown(){
+        if (this.volume > 0) {
+            this.volume -= 1;
+        }
     }
 }
