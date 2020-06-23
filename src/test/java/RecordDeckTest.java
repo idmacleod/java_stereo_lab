@@ -38,4 +38,15 @@ public class RecordDeckTest {
         recordDeck.stop();
         assertFalse(recordDeck.isPlaying());
     }
+    
+    @Test
+    public void speedStartsMedium() {
+        assertEquals(RecordDeck.Speed.MEDIUM, recordDeck.getSpeed());
+    }
+
+    @Test
+    public void canChangeSpeed() {
+        recordDeck.setSpeed(RecordDeck.Speed.FAST);
+        assertEquals(RecordDeck.Speed.FAST, recordDeck.getSpeed());
+    }
 }
