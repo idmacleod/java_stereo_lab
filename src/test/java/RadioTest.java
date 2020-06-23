@@ -12,11 +12,6 @@ public class RadioTest {
     }
 
     @Test
-    public void canTune() {
-        assertEquals("Tuned to Radio 1", radio.tune("Radio 1"));
-    }
-
-    @Test
     public void hasMake() {
         assertEquals("Sony", radio.getMake());
     }
@@ -24,5 +19,10 @@ public class RadioTest {
     @Test
     public void hasModel() {
         assertEquals("RX100", radio.getModel());
+    }
+
+    @Test
+    public void canTune() {
+        assertEquals("Radio tuned to Radio 1", radio.tune("Radio 1"));
     }
 }
