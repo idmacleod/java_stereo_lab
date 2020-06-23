@@ -48,5 +48,8 @@ public class RecordDeckTest {
     public void canChangeSpeed() {
         recordDeck.setSpeed(RecordDeck.Speed.FAST);
         assertEquals(RecordDeck.Speed.FAST, recordDeck.getSpeed());
+        recordDeck.play();
+        recordDeck.setSpeed(RecordDeck.Speed.MEDIUM);
+        assertEquals(RecordDeck.Speed.FAST, recordDeck.getSpeed());
     }
 }

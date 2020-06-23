@@ -3,7 +3,7 @@ public class RecordDeck extends Component implements IPlay {
     private Speed speed;
     enum Speed { SLOW, MEDIUM, FAST; }
 
-    public RecordDeck(String make, String model){
+    public RecordDeck(String make, String model) {
         super(make, model);
         this.playing = false;
         this.speed = Speed.MEDIUM;
