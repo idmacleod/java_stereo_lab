@@ -1,4 +1,5 @@
-package PACKAGE_NAME;
-
-public class SmartTV {
+public class SmartTV implements IConnect {
+    public String connect(Stereo stereo) {
+        return stereo.getName();
+    }
 }
